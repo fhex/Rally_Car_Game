@@ -74,7 +74,8 @@ public class CarinputScript : MonoBehaviour
         if (!UseJoystick) //If using controls
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
-            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(speed/2) / flatoutSpeed, pitchSpeed); //Calculate EnginePith
+            //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(speed/2) / flatoutSpeed, pitchSpeed); //Calculate EnginePith
+            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque  *speed * Time.deltaTime/5) / flatoutSpeed, pitchSpeed);
             float motor = maxMotorTorque *  Input.GetAxis("Vertical"); //AddTorque from VerticalAxis
             float steering = maxSteeringAngle *  Input.GetAxis("Horizontal"); //Steer HorizontalAxis
 
@@ -89,6 +90,7 @@ public class CarinputScript : MonoBehaviour
                 {
                     axleInfo.leftWheel.motorTorque = motor;
                     axleInfo.rightWheel.motorTorque = motor;
+                    
                 }
                 else//If above MaxSpeed apply OverspeedTorque
                 {
@@ -99,7 +101,7 @@ public class CarinputScript : MonoBehaviour
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
             }
 
-            
+           
 
             rb.AddForce(-transform.up * speed * downforce); //AddDownforce 
                       

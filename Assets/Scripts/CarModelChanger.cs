@@ -13,7 +13,7 @@ public class CarModelChanger : MonoBehaviour
         if(carModels.Length < 1 ) { Debug.LogWarning("Assign MeshModels to Car"); } //Check if there are models assigned.
         currentCar = FindObjectOfType<GameManager>().chosenCar; //Starting Model 
         carModels[currentCar].SetActive(true);
-        
+        Debug.Log("modelChanger "+ currentCar);
     }
 
     // Update is called once per frame
@@ -33,6 +33,6 @@ public class CarModelChanger : MonoBehaviour
             carModels[currentCar].SetActive(true);
         }
         carModels[currentCar].SetActive(true);
-
+        Debug.Log("changer " + currentCar);
     }
 }
