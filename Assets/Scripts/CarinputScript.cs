@@ -39,11 +39,14 @@ public class CarinputScript : MonoBehaviour
     }
     private void Awake()
     {
-        UseJoystick = FindObjectOfType<GameManager>().UseJoystick;
+        
         //DontDestroyOnLoad(this.gameObject);
     }
     private void Start()
     {
+        //Debug.Log("CarinputScriptStarted");
+        UseJoystick = FindObjectOfType<GameManager>().activateUseJoystick;
+        //Debug.Log(UseJoystick);
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = centerOfMass.transform.position;
         if (!UseJoystick)
@@ -112,7 +115,7 @@ public class CarinputScript : MonoBehaviour
         else //If UsingJoystick
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
-            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(speed/2) / flatoutSpeed, pitchSpeed); //Calculate Engine Speed
+            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque * speed * Time.deltaTime / 5) / flatoutSpeed, pitchSpeed);//Calculate Engine Speed
             float motor = maxMotorTorque * joystick2.Vertical; // maxMotorTorque * Input.GetAxis("Vertical");
             float steering = maxSteeringAngle * joystick.Horizontal; // Input.GetAxis("Horizontal");
 

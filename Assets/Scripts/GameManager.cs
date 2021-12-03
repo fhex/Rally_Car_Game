@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
     CarModelChanger modelChanger;
     public int chosenCar;
     public static GameManager Instance;
-    [SerializeField] public bool UseJoystick;
+
+    [SerializeField] public bool activateUseJoystick;
+    
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -24,25 +27,28 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        Debug.Log("GameManagerStarted");
         modelChanger = FindObjectOfType<CarModelChanger>();
-        UseJoystick = false;
+        
+        //activateUseJoystick = false;
     }
 
     // Update is called once per frame
     public void toggleJoystick()
     {
-        UseJoystick = !UseJoystick;
+        
+        activateUseJoystick = !activateUseJoystick;
+        //Debug.Log("toggle Joystick Gamemanager");
     }
     public void StartnewGame()
     {
+        modelChanger = FindObjectOfType<CarModelChanger>();
         chosenCar = modelChanger.currentCar;
-        Debug.Log("gamemanger save current Car" + chosenCar);
+        
+        Debug.Log("gamemanager startGame and save current Car" + chosenCar);
         SceneManager.LoadScene(1);
     }
-    public void Restart()
-    {
-        SceneManager.LoadScene(0);
-    }
+    
 
     public void RestartLevel()
     {
