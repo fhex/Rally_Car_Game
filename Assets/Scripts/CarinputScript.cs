@@ -19,7 +19,7 @@ public class CarinputScript : MonoBehaviour
     [SerializeField] Joystick joystick2;
     [SerializeField] AudioSource _source; //EngineSound
     [Header("pitch parameter")]
-    public float flatoutSpeed = 110.0f;
+    public float flatoutSpeed = 130.0f;
     [Range(0.0f, 3.0f)]
     public float minPitch = 1f;
     [Range(0.0f, 0.1f)]
@@ -78,7 +78,7 @@ public class CarinputScript : MonoBehaviour
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(speed/2) / flatoutSpeed, pitchSpeed); //Calculate EnginePith
-            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque  *speed * Time.deltaTime/5) / flatoutSpeed, pitchSpeed);
+            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque  *speed /5 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
             float motor = maxMotorTorque *  Input.GetAxis("Vertical"); //AddTorque from VerticalAxis
             float steering = maxSteeringAngle *  Input.GetAxis("Horizontal"); //Steer HorizontalAxis
 
