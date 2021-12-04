@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1117
   m_ShowMode: 4
-  m_Title: Lighting
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 122
+  controlID: 16
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: LightingWindow
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -68,14 +68,14 @@ MonoBehaviour:
     y: 0
     width: 294
     height: 1067
-  m_MinSize: {x: 390, y: 390}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 399
     height: 632
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -346,22 +346,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Darth_Artisan/Free_Trees/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Darth_Artisan/Free_Trees/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: G:\Unity\1_Car_Racer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 50a20000
-    m_LastClickedID: 41552
-    m_ExpandedIDs: 00000000e2640000469c000048a200004aa2000000ca9a3bffffff7f
+    m_SelectedIDs: 24630000
+    m_LastClickedID: 25380
+    m_ExpandedIDs: 00000000e4620000166300004c63000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +389,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e2640000
+    m_ExpandedIDs: 00000000e4620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -517,25 +517,25 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ca980000
-      m_LastClickedID: 39114
-      m_ExpandedIDs: 2491fffff691ffffc892ffff9a93ffff6c94ffff3e95ffff1096ffffe296ffffb497ffff8698ffff8ca6ffffa6b4fffff6b4ffff1cb8ffff9ab8ffff5ec1ffff3ed4ffff4cd4ffff4ed4ffff9cdfffff14e5ffff18f7ffffdef9fffff4ffffff
+      m_SelectedIDs: 646c0100
+      m_LastClickedID: 93284
+      m_ExpandedIDs: c47cfeff147dfeff4880feffc480feffde81feffe68affff4492ffff6e9dffff38bbffff14c9ffff8acbffff9acbffff1ed0ffff32dbffff78e0fffff4e2ffff52e4ffff9ce4ffffc4e7ffff40e8ffff1eecffffd8f4ffffdef9fffff4ffffff486f0000fa6f0000da990000789a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: CarWithOwnScript
+        m_OriginalName: CarWithOwnScript
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -14062
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 11}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -768,9 +768,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 29.600407, y: -1.2233543, z: 9.520438}
+    m_Target: {x: -4.6826944, y: 10.95582, z: -10.841131}
     speed: 2
-    m_Value: {x: 29.600407, y: -1.2233543, z: 9.520438}
+    m_Value: {x: -4.6826944, y: 10.95582, z: -10.841131}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -817,13 +817,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.055715192, y: 0.6163625, z: -0.043611232, w: 0.7843913}
+    m_Target: {x: 0.22612904, y: 0.2857762, z: -0.0694871, w: 0.92873484}
     speed: 2
-    m_Value: {x: 0.056752626, y: 0.61859125, z: -0.044702414, w: 0.7823846}
+    m_Value: {x: 0.22621277, y: 0.28435734, z: -0.06914164, w: 0.9290793}
   m_Size:
-    m_Target: 24.862213
+    m_Target: 0.8660254
     speed: 2
-    m_Value: 24.86221
+    m_Value: 0.86603636
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1225, y: 590}
+  m_TargetSize: {x: 944, y: 590}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -897,8 +897,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -612.5
-    m_HBaseRangeMax: 612.5
+    m_HBaseRangeMin: -472
+    m_HBaseRangeMax: 472
     m_VBaseRangeMin: -295
     m_VBaseRangeMax: 295
     m_HAllowExceedBaseRangeMin: 1
