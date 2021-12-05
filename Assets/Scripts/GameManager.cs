@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     CarModelChanger modelChanger;
     public int chosenCar;
     public static GameManager Instance;
+    
 
     [SerializeField] public bool activateUseJoystick;
     
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
         
         Debug.Log("gamemanager startGame and save current Car" + chosenCar);
         SceneManager.LoadScene(1);
+        
     }
     
 
