@@ -79,7 +79,7 @@ public class CarinputScript : MonoBehaviour
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(speed/2) / flatoutSpeed, pitchSpeed); //Calculate EnginePith
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque  *speed /5 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
-            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(Input.GetAxis("Vertical") * speed *100 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
+            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(Input.GetAxis("Vertical") * speed *150 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
             float motor = maxMotorTorque *  Input.GetAxis("Vertical"); //AddTorque from VerticalAxis
             float steering = maxSteeringAngle *  Input.GetAxis("Horizontal"); //Steer HorizontalAxis
 
@@ -117,7 +117,7 @@ public class CarinputScript : MonoBehaviour
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque * speed * Time.deltaTime / 5) / flatoutSpeed, pitchSpeed);//Calculate Engine Speed
-            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(Input.GetAxis("Vertical") * speed * 150 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
+            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(joystick2.Vertical * speed * 150 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
             float motor = maxMotorTorque * joystick2.Vertical; // maxMotorTorque * Input.GetAxis("Vertical");
             float steering = maxSteeringAngle * joystick.Horizontal; // Input.GetAxis("Horizontal");
 
