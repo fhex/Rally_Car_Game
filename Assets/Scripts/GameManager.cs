@@ -50,6 +50,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
         
     }
+    public void FreeRoamLevel()
+    {
+        modelChanger = FindObjectOfType<CarModelChanger>();
+        chosenCar = modelChanger.currentCar;       
+        SceneManager.LoadScene(2);
+    }
     
 
     public void RestartLevel()

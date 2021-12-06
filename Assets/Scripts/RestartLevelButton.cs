@@ -25,9 +25,14 @@ public class RestartLevelButton : MonoBehaviour
     {
         FindObjectOfType<GameManager>().StartnewGame();
     }
+    public void FreeRoamLevel()
+    {
+        FindObjectOfType<GameManager>().FreeRoamLevel();
+    }
     public void toggleJoystick()
     {
         
         FindObjectOfType<GameManager>().toggleJoystick(); 
     }
+
 }

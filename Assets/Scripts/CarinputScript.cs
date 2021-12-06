@@ -74,9 +74,11 @@ public class CarinputScript : MonoBehaviour
 
     public void FixedUpdate()
     {
+
         if (!UseJoystick) //If using controls
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
+            if (speed > 90) { maxSteeringAngle = 20; } else { maxSteeringAngle = 35; }
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(speed/2) / flatoutSpeed, pitchSpeed); //Calculate EnginePith
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque  *speed /5 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
             _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(Input.GetAxis("Vertical") * speed *150 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
@@ -116,6 +118,7 @@ public class CarinputScript : MonoBehaviour
         else //If UsingJoystick
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
+            if (speed >90) { maxSteeringAngle = 20; }
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque * speed * Time.deltaTime / 5) / flatoutSpeed, pitchSpeed);//Calculate Engine Speed
             _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(joystick2.Vertical * speed * 150 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
             float motor = maxMotorTorque * joystick2.Vertical; // maxMotorTorque * Input.GetAxis("Vertical");
