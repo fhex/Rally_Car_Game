@@ -208,15 +208,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16050756
+      value: 0.16050757
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 8.651473e-16
+      value: -0.000000014707963
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -6.307411e-17
+      value: 0.0000000023917495
       objectReference: {fileID: 0}
     - target: {fileID: 1126727236, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalPosition.z
@@ -476,15 +476,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16050756
+      value: 0.16050757
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 8.651473e-16
+      value: -0.000000014707963
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -6.307411e-17
+      value: 0.0000000023917495
       objectReference: {fileID: 0}
     - target: {fileID: 3308982824281381670, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_Name
@@ -692,6 +692,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 293151733039678508, guid: 796d30ecf9862244b85a30ee5295fe62, type: 3}
+      propertyPath: AmountOfCPTospawn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 293151733039678508, guid: 796d30ecf9862244b85a30ee5295fe62, type: 3}
+      propertyPath: CheckpointPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 293151733039678508, guid: 796d30ecf9862244b85a30ee5295fe62, type: 3}
+      propertyPath: CheckpointPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 6369123751111438969, guid: 007d5f09e18ee93478bd60e441f8b57a, type: 3}
     - target: {fileID: 293151733039678509, guid: 796d30ecf9862244b85a30ee5295fe62, type: 3}
       propertyPath: m_Name
       value: CheckPointHandler

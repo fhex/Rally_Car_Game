@@ -6,12 +6,34 @@ using System.Linq;
 public class CheckPointHandler : MonoBehaviour
 {
     public static GameObject[] CheckPointsList;
+    public GameObject[] CheckpointPrefab;
+    [SerializeField] int AmountOfCPTospawn = 7;
+    [SerializeField] int minusAreaSize = -450;
+    [SerializeField] int plusAreaSize = 450;
+
+    public bool RandomCPpoints;
     public int numberOfCheckPoints;
     private int CurrentCheckPointInt = 0;
     private Vector3 currentCheckPointPos;
     [SerializeField] GameObject winScreen;
     [SerializeField] GameObject checkPointArrow;
 
+    private void Awake()
+    {
+        if (RandomCPpoints)
+        {
+            spawnCheckpoints(AmountOfCPTospawn);
+        }
+    }
+    void spawnCheckpoints(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            var pos = transform.position + new Vector3(Random.Range(minusAreaSize, plusAreaSize), Random.Range(-1, 1), Random.Range(minusAreaSize, plusAreaSize));
+            var chosenAsteroid = CheckpointPrefab[Random.Range(0, CheckpointPrefab.Length)];
+            var asteroid = Instantiate(chosenAsteroid, pos, Quaternion.identity);
+        }
+    }
     void Start()
     {
         

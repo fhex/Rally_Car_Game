@@ -5,6 +5,8 @@ using TMPro;
 
 public class CarinputScript : MonoBehaviour
 {
+    
+
     public List<AxleInfo> axleInfos; // the information about each individual axle
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
@@ -13,7 +15,7 @@ public class CarinputScript : MonoBehaviour
     [SerializeField] public TMP_Text speedometerTxt;
     [SerializeField] public float speed;
     [SerializeField] float maximumSpeed = 130f;
-    [SerializeField] float overSpeedTorque = 150f;
+    [SerializeField] float overSpeedDevider = 0.3f;
     [SerializeField] GameObject centerOfMass;
     [SerializeField] Joystick joystick;
     [SerializeField] Joystick joystick2;
@@ -98,15 +100,21 @@ public class CarinputScript : MonoBehaviour
                     axleInfo.rightWheel.motorTorque = motor;
                     
                 }
-                else//If above MaxSpeed apply OverspeedTorque
+                if (axleInfo.motor && speed > maximumSpeed && (Input.GetAxis("Vertical") > 0))//If above MaxSpeed apply OverspeedTorque
                 {
-                    axleInfo.leftWheel.motorTorque = overSpeedTorque;
-                    axleInfo.rightWheel.motorTorque = overSpeedTorque;
+                    axleInfo.leftWheel.motorTorque = motor * overSpeedDevider;
+                    axleInfo.rightWheel.motorTorque = motor * overSpeedDevider;
+                }
+                else
+                 
+                {
+                    axleInfo.leftWheel.motorTorque = motor;
+                    axleInfo.rightWheel.motorTorque = motor;
                 }
                 ApplyLocalPositionToVisuals(axleInfo.leftWheel);
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
             }
-
+            
            
 
             rb.AddForce(-transform.up * speed * downforce); //AddDownforce 
@@ -118,7 +126,7 @@ public class CarinputScript : MonoBehaviour
         else //If UsingJoystick
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
-            if (speed >90) { maxSteeringAngle = 20; }
+            if (speed > 90) { maxSteeringAngle = 20; } else { maxSteeringAngle = 35; }
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque * speed * Time.deltaTime / 5) / flatoutSpeed, pitchSpeed);//Calculate Engine Speed
             _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(joystick2.Vertical * speed * 150 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
             float motor = maxMotorTorque * joystick2.Vertical; // maxMotorTorque * Input.GetAxis("Vertical");
@@ -136,11 +144,19 @@ public class CarinputScript : MonoBehaviour
                     axleInfo.leftWheel.motorTorque = motor;
                     axleInfo.rightWheel.motorTorque = motor;
                 }
-                else//If above MaxSpeed apply OverspeedTorque
+                if (axleInfo.motor && speed > maximumSpeed && (joystick2.Vertical > 0))//If above MaxSpeed apply OverspeedTorque
                 {
-                    axleInfo.leftWheel.motorTorque = overSpeedTorque;
-                    axleInfo.rightWheel.motorTorque = overSpeedTorque;
+                    axleInfo.leftWheel.motorTorque = motor * overSpeedDevider;
+                    axleInfo.rightWheel.motorTorque = motor * overSpeedDevider;
                 }
+                else
+
+                {
+                    axleInfo.leftWheel.motorTorque = motor;
+                    axleInfo.rightWheel.motorTorque = motor;
+                }
+                ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+                ApplyLocalPositionToVisuals(axleInfo.rightWheel);
                 ApplyLocalPositionToVisuals(axleInfo.leftWheel);
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
             }
@@ -158,7 +174,7 @@ public class CarinputScript : MonoBehaviour
     
     private void LateUpdate()
     {
-        speedometerTxt.SetText(speed.ToString("0") + " Km/h"); //uppdate Speedometer Text
+        speedometerTxt.SetText(Mathf.Abs(speed).ToString("0") + " Km/h"); //uppdate Speedometer Text
     }
     private void Update()
     {
