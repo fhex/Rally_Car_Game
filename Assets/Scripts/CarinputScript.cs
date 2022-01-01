@@ -104,6 +104,7 @@ public class CarinputScript : MonoBehaviour
                 {
                     axleInfo.leftWheel.motorTorque = motor * overSpeedDevider;
                     axleInfo.rightWheel.motorTorque = motor * overSpeedDevider;
+                    Debug.Log("Overspeed");
                 }
                 else
                  

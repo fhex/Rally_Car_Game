@@ -569,44 +569,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.20268884
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000029183722
+      value: -0.000000002147168
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000060405982
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894008206, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_Lens.m_SensorSize.x
-      value: 2.0018182
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.20268884
+      value: 1.2489985e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000029183722
+      value: -0.000000002147168
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000060405982
-      objectReference: {fileID: 0}
-    - target: {fileID: 320277995295186098, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_ForwardFriction.m_ExtremumSlip
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 320277995295186098, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_SidewaysFriction.m_ExtremumSlip
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149099488610, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: 1.2489985e-10
       objectReference: {fileID: 0}
     - target: {fileID: 3308982824281381670, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_Name
@@ -656,14 +632,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3881605005229575183, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_ForwardFriction.m_ExtremumSlip
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3881605005229575183, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_SidewaysFriction.m_ExtremumSlip
-      value: 1.3
-      objectReference: {fileID: 0}
     - target: {fileID: 7366746642204578798, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: joystick
       value: 
@@ -676,26 +644,6 @@ PrefabInstance:
       propertyPath: speedometerTxt
       value: 
       objectReference: {fileID: 1786003816}
-    - target: {fileID: 7366746642204578798, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: axleInfos.Array.data[1].motor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565260767440798015, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_ForwardFriction.m_ExtremumSlip
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565260767440798015, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_SidewaysFriction.m_ExtremumSlip
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8902775396806217319, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_ForwardFriction.m_ExtremumSlip
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8902775396806217319, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_SidewaysFriction.m_ExtremumSlip
-      value: 1.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
 --- !u!4 &443496007 stripped
@@ -1769,7 +1717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4885569566998152394, guid: 031528c072667a046b36c31f7e712492, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4885569566998152395, guid: 031528c072667a046b36c31f7e712492, type: 3}
       propertyPath: activateUseJoystick

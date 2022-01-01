@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     CarModelChanger modelChanger;
     public int chosenCar;
     public static GameManager Instance;
-    
+    [SerializeField] AudioSource musicTrack;
 
     [SerializeField] public bool activateUseJoystick;
     
@@ -66,5 +66,15 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void toggleMusic()
+    {
+        if (musicTrack == null) return;
+        if (musicTrack.isPlaying)
+        {
+            musicTrack.Pause();
+        }
+        else musicTrack.Play();
     }
 }
