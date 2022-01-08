@@ -34,5 +34,8 @@ public class RestartLevelButton : MonoBehaviour
         
         FindObjectOfType<GameManager>().toggleJoystick(); 
     }
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
