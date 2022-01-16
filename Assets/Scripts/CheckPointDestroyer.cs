@@ -11,7 +11,7 @@ public class CheckPointDestroyer : MonoBehaviour
     private void Start()
     {
         
-        transform.position = new Vector3(transform.position.x, Terrain.activeTerrain.SampleHeight(transform.position)+2,transform.position.z);
+       // transform.position = new Vector3(transform.position.x, Terrain.activeTerrain.SampleHeight(transform.position)+2,transform.position.z);
         //gameObject.transform.position.y = Terrain.activeTerrain.SampleHeight(transform.position);
     }
     private void OnTriggerEnter(Collider other)
