@@ -83,7 +83,7 @@ public class CarinputScript : MonoBehaviour
             if (speed > 90) { maxSteeringAngle = 20; } else { maxSteeringAngle = 35; }
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(speed/2) / flatoutSpeed, pitchSpeed); //Calculate EnginePith
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque  *speed /5 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
-            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(Input.GetAxis("Vertical") * speed *150 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
+            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs((Input.GetAxis("Vertical")+3) * speed *50 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
             float motor = maxMotorTorque *  Input.GetAxis("Vertical"); //AddTorque from VerticalAxis
             float steering = maxSteeringAngle *  Input.GetAxis("Horizontal"); //Steer HorizontalAxis
 
