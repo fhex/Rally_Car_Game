@@ -590,19 +590,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000002147168
+      value: 0.000000002147168
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.2489985e-10
+      value: -1.2489985e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000002147168
+      value: 0.000000002147168
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.2489985e-10
+      value: -1.2489985e-10
       objectReference: {fileID: 0}
     - target: {fileID: 3308982824281381670, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_Name
@@ -1737,7 +1737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4885569566998152394, guid: 031528c072667a046b36c31f7e712492, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4885569566998152395, guid: 031528c072667a046b36c31f7e712492, type: 3}
       propertyPath: activateUseJoystick

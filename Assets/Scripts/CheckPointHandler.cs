@@ -36,8 +36,12 @@ public class CheckPointHandler : MonoBehaviour
     }
     void Start()
     {
-        
+       
         CheckPointStartingMethod();
+        if (FindObjectOfType<TimerScript>() != null)
+        {
+            FindObjectOfType<TimerScript>().startTimer();
+        }
         winScreen = GameObject.FindGameObjectWithTag("WinScreen");
         if (winScreen == null) return;
         else
@@ -120,6 +124,7 @@ public class CheckPointHandler : MonoBehaviour
     private IEnumerator AllCheckPoints()
     {
         winScreen.SetActive(true);
+        FindObjectOfType<TimerScript>().SaveRaceTime();
         yield return new WaitForSeconds(5);
         FindObjectOfType<GameManager>().MainMenu();
     }
