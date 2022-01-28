@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        Screen.SetResolution(640, 360, true);
+       // Screen.SetResolution(640, 360, true);
         if (Instance == null) // If there is no instance already
         {
             DontDestroyOnLoad(gameObject); // Keep the GameObject, this component is attached to, across different scenes

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1495971715808776518}
   - component: {fileID: -6382910952000719009}
   - component: {fileID: -2740044947092097797}
+  - component: {fileID: 8456126386752861551}
   m_Layer: 0
   m_Name: FenceWood
   m_TagString: Untagged
@@ -126,3 +127,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8456126386752861551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730415285809369534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2445064, y: 1.12, z: 0.46}
+  m_Center: {x: 0.021199405, y: -0.008815169, z: 0.006823428}

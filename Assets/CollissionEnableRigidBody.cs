@@ -21,4 +21,12 @@ public class CollissionEnableRigidBody : MonoBehaviour
     {
         _rigidbody.isKinematic = false;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Debug.Log("player hit");
+            _rigidbody.isKinematic = false;
+        }
+    }
 }

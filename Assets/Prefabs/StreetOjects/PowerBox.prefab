@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8069068931744933315}
   - component: {fileID: 6801330582696272655}
   - component: {fileID: 7346835322921577194}
+  - component: {fileID: 7102086641126033931}
   m_Layer: 0
   m_Name: PowerBox
   m_TagString: Untagged
@@ -125,3 +126,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7102086641126033931
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971909333226871144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.62, y: 0.89, z: 0.32}
+  m_Center: {x: 0, y: 0.3790362, z: -0.002125714}

@@ -14,6 +14,8 @@ public class CarinputScript : MonoBehaviour
     [SerializeField] bool UseJoystick; //Decide if you using Joysticks
     [SerializeField] public TMP_Text speedometerTxt;
     [SerializeField] public float speed;
+    [SerializeField] float lowSpeed = 50f;
+    [SerializeField] float lowSpeedmultiplier = 500f;
     [SerializeField] float maximumSpeed = 130f;
     [SerializeField] float overSpeedDevider = 0.3f;
     [SerializeField] GameObject centerOfMass;
@@ -80,38 +82,61 @@ public class CarinputScript : MonoBehaviour
         if (!UseJoystick) //If using controls
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
+            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs((Input.GetAxis("Vertical") + 3) * speed * 50 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
+
             if (speed > 90) { maxSteeringAngle = 20; } else { maxSteeringAngle = 35; }
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(speed/2) / flatoutSpeed, pitchSpeed); //Calculate EnginePith
             //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque  *speed /5 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
-            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs((Input.GetAxis("Vertical")+3) * speed *50 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
-            float motor = maxMotorTorque *  Input.GetAxis("Vertical"); //AddTorque from VerticalAxis
+
+            
+
+            float motor = maxMotorTorque *  Input.GetAxis("Vertical"); //AddTorque Normal speed from VerticalAxis
+            float motorLowSpeed = maxMotorTorque * lowSpeedmultiplier * Input.GetAxis("Vertical") ; //add power on lowespeeds 
+            float motoroverSpeed = maxMotorTorque * overSpeedDevider * Input.GetAxis("Vertical"); //lower power when going fast.
+
             float steering = maxSteeringAngle *  Input.GetAxis("Horizontal"); //Steer HorizontalAxis
 
-            foreach (AxleInfo axleInfo in axleInfos)//get all the wheels from Inpsector 
+            foreach (AxleInfo axleInfo in axleInfos) //get all the wheels from Inpsector 
             {
-                if (axleInfo.steering)
+
+                if (axleInfo.steering) //Wheels that are marked for steering
                 {
                     axleInfo.leftWheel.steerAngle = steering;
                     axleInfo.rightWheel.steerAngle = steering;
                 }
-                if (axleInfo.motor && speed < maximumSpeed)//If below MaxSpeed add Torque
+                if (speed < -50) //If reversing
                 {
-                    axleInfo.leftWheel.motorTorque = motor;
-                    axleInfo.rightWheel.motorTorque = motor;
-                    
+                    axleInfo.leftWheel.motorTorque = motoroverSpeed;
+                    axleInfo.rightWheel.motorTorque = motoroverSpeed;
+                  //  Debug.Log("motoroverSpeed" + motoroverSpeed);
+
                 }
-                if (axleInfo.motor && speed > maximumSpeed && (Input.GetAxis("Vertical") > 0))//If above MaxSpeed apply OverspeedTorque
+
+                else if ( speed < lowSpeed)//If below normal speed add extra Torque
                 {
-                    axleInfo.leftWheel.motorTorque = motor * overSpeedDevider;
-                    axleInfo.rightWheel.motorTorque = motor * overSpeedDevider;
-                    Debug.Log("Overspeed");
+                    axleInfo.leftWheel.motorTorque = motorLowSpeed;
+                    axleInfo.rightWheel.motorTorque = motorLowSpeed;
+                   // Debug.Log("lowspeed" + motorLowSpeed);
+
                 }
-                else
                  
-                {
-                    axleInfo.leftWheel.motorTorque = motor;
-                    axleInfo.rightWheel.motorTorque = motor;
-                }
+                else if (speed > maximumSpeed ) //If overspeeding
+                    {
+                        axleInfo.leftWheel.motorTorque = motoroverSpeed;
+                        axleInfo.rightWheel.motorTorque = motoroverSpeed;
+                       // Debug.Log("motoroverSpeed" + motoroverSpeed);
+
+                    }
+                
+
+                else //normal speed
+                 
+                    {
+                   axleInfo.leftWheel.motorTorque = motor;
+                   axleInfo.rightWheel.motorTorque = motor;
+                   // Debug.Log("normalSpeed" + motor);
+                    }
+                
                 ApplyLocalPositionToVisuals(axleInfo.leftWheel);
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
             }
@@ -124,40 +149,64 @@ public class CarinputScript : MonoBehaviour
            // Debug.Log(motor);
 
         }
+
         else //If UsingJoystick
         {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f; //Calculate currentSpeed
-            if (speed > 90) { maxSteeringAngle = 20; } else { maxSteeringAngle = 35; }
-            //_source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(axleInfos[0].leftWheel.motorTorque * speed * Time.deltaTime / 5) / flatoutSpeed, pitchSpeed);//Calculate Engine Speed
-            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(joystick2.Vertical * speed * 150 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
-            float motor = maxMotorTorque * joystick2.Vertical; // maxMotorTorque * Input.GetAxis("Vertical");
-            float steering = maxSteeringAngle * joystick.Horizontal; // Input.GetAxis("Horizontal");
+            
+            _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs((Input.GetAxis("Vertical") + 3) * speed * 50 * Time.deltaTime) / flatoutSpeed, pitchSpeed);
 
-            foreach (AxleInfo axleInfo in axleInfos)//get all the wheels from Inpsector 
+            if (speed > 90) { maxSteeringAngle = 20; } else { maxSteeringAngle = 35; }
+            
+
+
+            float motor = maxMotorTorque * joystick2.Vertical; //AddTorque Normal speed from VerticalAxis
+            float motorLowSpeed = maxMotorTorque * lowSpeedmultiplier * joystick2.Vertical; //add power on lowespeeds 
+            float motoroverSpeed = maxMotorTorque * overSpeedDevider * joystick2.Vertical; //lower power when going fast.
+
+            float steering = maxSteeringAngle * joystick.Horizontal; //Steer HorizontalAxis
+
+            foreach (AxleInfo axleInfo in axleInfos) //get all the wheels from Inpsector 
             {
-                if (axleInfo.steering)
+
+                if (axleInfo.steering) //Wheels that are marked for steering
                 {
                     axleInfo.leftWheel.steerAngle = steering;
                     axleInfo.rightWheel.steerAngle = steering;
                 }
-                if (axleInfo.motor && speed < maximumSpeed)//If below MaxSpeed add Torque
+                if (speed < -50) //If reversing
                 {
-                    axleInfo.leftWheel.motorTorque = motor;
-                    axleInfo.rightWheel.motorTorque = motor;
+                    axleInfo.leftWheel.motorTorque = motoroverSpeed;
+                    axleInfo.rightWheel.motorTorque = motoroverSpeed;
+                    //Debug.Log("motoroverSpeed" + motoroverSpeed);
+
                 }
-                if (axleInfo.motor && speed > maximumSpeed && (joystick2.Vertical > 0))//If above MaxSpeed apply OverspeedTorque
+
+                else if (speed < lowSpeed)//If below normal speed add extra Torque
                 {
-                    axleInfo.leftWheel.motorTorque = motor * overSpeedDevider;
-                    axleInfo.rightWheel.motorTorque = motor * overSpeedDevider;
+                    axleInfo.leftWheel.motorTorque = motorLowSpeed;
+                    axleInfo.rightWheel.motorTorque = motorLowSpeed;
+                   // Debug.Log("lowspeed" + motorLowSpeed);
+
                 }
-                else
+
+                else if (speed > maximumSpeed) //If overspeeding
+                {
+                    axleInfo.leftWheel.motorTorque = motoroverSpeed;
+                    axleInfo.rightWheel.motorTorque = motoroverSpeed;
+                   // Debug.Log("motoroverSpeed" + motoroverSpeed);
+
+                }
+
+
+                else //normal speed
 
                 {
                     axleInfo.leftWheel.motorTorque = motor;
                     axleInfo.rightWheel.motorTorque = motor;
+                   // Debug.Log("normalSpeed" + motor);
                 }
-                ApplyLocalPositionToVisuals(axleInfo.leftWheel);
-                ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+
                 ApplyLocalPositionToVisuals(axleInfo.leftWheel);
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
             }
@@ -165,12 +214,13 @@ public class CarinputScript : MonoBehaviour
 
 
             rb.AddForce(-transform.up * speed * downforce); //AddDownforce 
-           
+
 
             // Debug.Log(motor);
+
         }
-        
-       
+
+
     }
     
     private void LateUpdate()
