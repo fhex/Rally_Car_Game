@@ -667,7 +667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4885569566998152395, guid: 031528c072667a046b36c31f7e712492, type: 3}
       propertyPath: activateUseJoystick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 031528c072667a046b36c31f7e712492, type: 3}

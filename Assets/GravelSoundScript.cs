@@ -22,7 +22,7 @@ public class GravelSoundScript : MonoBehaviour
             
             volumeInput = Mathf.Abs(FindObjectOfType<CarinputScript>().speed);
             audiosource.pitch = Mathf.Clamp(volumeInput, 15, 100) / 50;
-            audiosource.volume = Mathf.Clamp(volumeInput, 25, 60) / 300;
+            audiosource.volume = Mathf.Clamp(volumeInput, 25, 60) / 400;
         }
         else
         {
