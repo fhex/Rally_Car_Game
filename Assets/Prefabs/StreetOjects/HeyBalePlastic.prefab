@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5430137492515069391}
   - component: {fileID: 6672695165772753017}
   - component: {fileID: -4167478606459410037}
+  - component: {fileID: -922159063486660042}
   m_Layer: 0
   m_Name: HeyBalePlastic
   m_TagString: Untagged
@@ -109,7 +110,19 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-922159063486660042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5790297851465284634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93370e643280f847aea2ca0e8e65e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

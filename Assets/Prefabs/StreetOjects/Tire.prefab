@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 9020365774560003523}
   - component: {fileID: 6542096009062609161}
   - component: {fileID: 5551711325143053391}
+  - component: {fileID: -6541802472503924063}
+  - component: {fileID: -2883963877580945345}
   m_Layer: 0
   m_Name: Tire
   m_TagString: Untagged
@@ -96,3 +98,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8564261979358181354, guid: c4ec443fa92b2ba4e9457312cbbadbe5, type: 3}
+--- !u!114 &-6541802472503924063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740827887840710876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93370e643280f847aea2ca0e8e65e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &-2883963877580945345
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740827887840710876}
+  serializedVersion: 2
+  m_Mass: 50
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
