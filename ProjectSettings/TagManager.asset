@@ -8,6 +8,7 @@ TagManager:
   - Arrow
   - WinScreen
   - Timertxt
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX

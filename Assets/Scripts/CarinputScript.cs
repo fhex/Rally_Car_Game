@@ -15,9 +15,9 @@ public class CarinputScript : MonoBehaviour
     [SerializeField] public TMP_Text speedometerTxt;
     [SerializeField] public float speed;
     [SerializeField] float lowSpeed = 50f;
-    [SerializeField] float lowSpeedmultiplier = 500f;
-    [SerializeField] float maximumSpeed = 130f;
-    [SerializeField] float overSpeedDevider = 0.3f;
+    [SerializeField] float lowSpeedmultiplier = 1.5f;
+    [SerializeField] float maximumSpeed = 120f;
+    [SerializeField] float overSpeedDevider = 0.1f;
     [SerializeField] GameObject centerOfMass;
     [SerializeField] Joystick joystick;
     [SerializeField] Joystick joystick2;

@@ -58,7 +58,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3339123, y: -3e-45, z: 1e-45, w: 0.9426042}
+  m_LocalRotation: {x: 0.3339123, y: 3e-45, z: -1e-45, w: 0.9426042}
   m_LocalPosition: {x: 0, y: 3.2, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19604,7 +19604,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894008205}
-  m_LocalRotation: {x: 0.3339123, y: -3e-45, z: 1e-45, w: 0.9426042}
+  m_LocalRotation: {x: 0.3339123, y: 3e-45, z: -1e-45, w: 0.9426042}
   m_LocalPosition: {x: 0, y: 3.2, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29567,7 +29567,7 @@ MonoBehaviour:
     steering: 1
   - leftWheel: {fileID: 320277995295186098}
     rightWheel: {fileID: 7565260767440798015}
-    motor: 0
+    motor: 1
     steering: 0
   maxMotorTorque: 750
   maxSteeringAngle: 35
@@ -29575,8 +29575,8 @@ MonoBehaviour:
   speedometerTxt: {fileID: 0}
   speed: 0
   lowSpeed: 50
-  lowSpeedmultiplier: 500
-  maximumSpeed: 112
+  lowSpeedmultiplier: 1.5
+  maximumSpeed: 120
   overSpeedDevider: 0.1
   centerOfMass: {fileID: 3850089672929001693}
   joystick: {fileID: 0}
@@ -34736,7 +34736,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9811321, g: 0.940448, b: 0.64328945, a: 1}
-  m_Intensity: 3
+  m_Intensity: 20
   m_Range: 30
   m_SpotAngle: 83.74638
   m_InnerSpotAngle: 45.54843
@@ -34829,7 +34829,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9811321, g: 0.940448, b: 0.64328945, a: 1}
-  m_Intensity: 3
+  m_Intensity: 20
   m_Range: 30
   m_SpotAngle: 83.74638
   m_InnerSpotAngle: 45.54843

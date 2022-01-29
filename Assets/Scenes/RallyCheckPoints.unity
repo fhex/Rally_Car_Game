@@ -569,40 +569,52 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9983125
+      value: 0.9955534
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.058071416
+      value: 0.09419912
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000002147168
+      value: 0.000000017228242
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.2489985e-10
+      value: -0.0000000016301339
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339125239, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
+      propertyPath: m_FollowOffset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339125240, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
+      propertyPath: m_TrackedObjectOffset.y
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9955534
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09419912
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000002147168
+      value: 0.000000017228242
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.2489985e-10
+      value: -0.0000000016301339
       objectReference: {fileID: 0}
     - target: {fileID: 3308982824281381670, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_Name
@@ -661,9 +673,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 486839621}
     - target: {fileID: 7366746642204578798, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
+      propertyPath: maximumSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366746642204578798, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: speedometerTxt
       value: 
       objectReference: {fileID: 1786003816}
+    - target: {fileID: 7366746642204578798, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
+      propertyPath: lowSpeedmultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
 --- !u!4 &443496007 stripped
@@ -1737,7 +1757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4885569566998152394, guid: 031528c072667a046b36c31f7e712492, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4885569566998152395, guid: 031528c072667a046b36c31f7e712492, type: 3}
       propertyPath: activateUseJoystick
