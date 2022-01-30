@@ -316,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1e-45
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.y
@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1894008207, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1e-45
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3308982824281381670, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
       propertyPath: m_Name
@@ -544,6 +544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 031528c072667a046b36c31f7e712492, type: 3}
+--- !u!1 &1908720499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3308982824281381670, guid: f2fcdd6ff9c8e4a48b2d8d313475c235, type: 3}
+  m_PrefabInstance: {fileID: 956581478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2038814299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -608,10 +613,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1633267183, guid: 7a56e512aff25ec42a3397cea308a635, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3972722215618590744, guid: 7a56e512aff25ec42a3397cea308a635, type: 3}
       propertyPath: m_Name
       value: JoystickCanvas
@@ -700,10 +701,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5800697865337434877, guid: 7a56e512aff25ec42a3397cea308a635, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a56e512aff25ec42a3397cea308a635, type: 3}
 --- !u!1001 &7575054252706880299
@@ -770,6 +767,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8162177442774545924, guid: 6caea7bbfc7782243bec4b0f2165fcfd, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1908720499}
     - target: {fileID: 8162177442774545931, guid: 6caea7bbfc7782243bec4b0f2165fcfd, type: 3}
       propertyPath: m_RootOrder
       value: 8

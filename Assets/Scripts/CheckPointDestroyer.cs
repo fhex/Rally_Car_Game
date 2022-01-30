@@ -7,7 +7,7 @@ public class CheckPointDestroyer : MonoBehaviour
     [SerializeField] GameObject CheckPointBurst;
     public bool activated = false;
     [SerializeField] private GameObject player;
-    [SerializeField] public Vector3 CheckpointLocation;
+    [SerializeField] public Vector3 checkpointLocation;
     [SerializeField] public Quaternion checkpointRot;
 
     private void Start()
@@ -21,14 +21,13 @@ public class CheckPointDestroyer : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("CheckPoint");
-            CheckpointLocation = new Vector3(other.transform.parent.position.x, other.transform.parent.position.y, other.transform.parent.position.z);
-            //checkpointRot = Quaternion.Euler(other.transform.rotation.x, other.transform.rotation.y, other.transform.rotation.z);
-            checkpointRot = player.transform.rotation;
-            FindObjectOfType<BorderWall>().CheckpointLocation = CheckpointLocation;
+            checkpointLocation = new Vector3(other.transform.parent.position.x, other.transform.parent.position.y, other.transform.parent.position.z); //Get PlayerPos when getting Checkpoint
+            checkpointRot = player.transform.rotation; //get player Rot in checkpoint
+            FindObjectOfType<BorderWall>().CheckpointLocation = checkpointLocation; //Save pos and rot in Borderwall Script
             FindObjectOfType<BorderWall>().checkpointRot = checkpointRot;
-            FindObjectOfType<CheckPointHandler>().CheckpointTaken();
-            GameObject Firework = Instantiate(CheckPointBurst, transform.position, Quaternion.identity);
-            Destroy(Firework, 2);
+            FindObjectOfType<CheckPointHandler>().CheckpointTaken(); //mark checkpoint as taken in handler
+            GameObject Firework = Instantiate(CheckPointBurst, transform.position, Quaternion.identity); //Spawn firework
+            Destroy(Firework, 2); //Destroy checkpoint and fireworks
             Destroy(gameObject);
         }
     }

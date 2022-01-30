@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManagerStarted");
         modelChanger = FindObjectOfType<CarModelChanger>();
-        
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.02F;
         //activateUseJoystick = false;
     }
 
