@@ -26,9 +26,10 @@ public class TimerScript : MonoBehaviour
         if (timerStarted && TimerTxt != null)
         {
             raceTime += Time.deltaTime;
-            float minutes = Mathf.FloorToInt(raceTime / 60);
-            float seconds = Mathf.FloorToInt(raceTime % 60);
-            TimerTxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            int minutes = Mathf.FloorToInt(raceTime / 60);
+            int seconds = Mathf.FloorToInt(raceTime % 60);
+            int milliseconds = (int)(raceTime * 100) % 100;
+            TimerTxt.text = ("Timer: ") + string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
             //TimerTxt.SetText(raceTime.ToString("F1"));
 
         }

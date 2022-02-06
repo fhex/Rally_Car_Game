@@ -16,9 +16,10 @@ public class BestTimeScript : MonoBehaviour
             
             bestTimesaved = PlayerPrefs.GetFloat("BestTime");
 
-            float minutes = Mathf.FloorToInt(bestTimesaved / 60);
-            float seconds = Mathf.FloorToInt(bestTimesaved % 60);
-            bestTimetxt.text = ("Best Time ") + string.Format("{0:00}:{1:00}", minutes, seconds);
+            int minutes = Mathf.FloorToInt(bestTimesaved / 60);
+            int seconds = Mathf.FloorToInt(bestTimesaved % 60);
+              int milliseconds = (int)(bestTimesaved * 100) % 100;
+        bestTimetxt.text = ("Best Time ") + string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
             //bestTimetxt.SetText("Best Time "+ bestTimesaved.ToString("F1"));
         
        
